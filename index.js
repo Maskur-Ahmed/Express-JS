@@ -1,18 +1,17 @@
 const express = require('express');
+const morgan = require('morgan');
+const router = require('./route/routes');
+
 
 const app = express();
+app.use(morgan());
 
-app.get('/',(req,res)=>{
-    res.send('hello world');
-})
+
+app.use('/',router);
 //to get single product;
 
-app.get('/products/:id',(req,res)=>{
-    res.send('<h1>single product</h1>')
-})
-
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
-    console.log('server is running on this port',PORT);
+    console.log('the server is running on',PORT);
 })
