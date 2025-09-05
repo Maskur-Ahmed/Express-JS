@@ -6,7 +6,7 @@ app.get('/',(req,res)=>{
     res.send('hello world');
 })
 //to get single product;
-app.get('/product/:id',(req,res)=>{
+app.get('/products/:id',(req,res)=>{
     res.send('<h1>single product</h1>')
 })
 
